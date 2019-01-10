@@ -174,7 +174,7 @@
 		"splashimage=0xcfd00000\0"			\
 		"splashpos=396,200\0"				\
 		"bootargs=init=/init " \
-			"androidboot.console=ttymxc0 video=mxcdi1fb:RGB24,WSVGA " \
+			"androidboot.console=ttymxc0 androidboot.hardware=freescale video=mxcdi1fb:RGB24,WSVGA " \
 			"ldb=di1 di1_primary pmem=32M,64M fbmem=8M gpu_memory=64M\0" \
 		"bootcmd_SD=mmc read 1 ${loadaddr} 0x1000 0x2000;" \
 			"mmc read 1 ${rd_loadaddr} 0x3000 0x300\0" \
