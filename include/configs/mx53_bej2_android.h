@@ -173,9 +173,9 @@
 		"lvds_num=1\0"						\
 		"splashimage=0xcfd00000\0"			\
 		"splashpos=396,200\0"				\
-		"bootargs=console=ttymxc0 init=/init " \
+		"bootargs=init=/init " \
 			"androidboot.console=ttymxc0 video=mxcdi1fb:RGB24,WSVGA " \
-			"ldb=di1 di1_primary pmem=32M,64M fbmem=5M gpu_memory=64M\0" \
+			"ldb=di1 di1_primary pmem=32M,64M fbmem=8M gpu_memory=64M\0" \
 		"bootcmd_SD=mmc read 1 ${loadaddr} 0x1000 0x2000;" \
 			"mmc read 1 ${rd_loadaddr} 0x3000 0x300\0" \
 		"bootcmd=run bootcmd_SD; bootm ${loadaddr} ${rd_loadaddr}\0" \
@@ -195,7 +195,7 @@
 		"lvds_num=1\0"						\
 		"splashimage=0xcfd00000\0"			\
 		"splashpos=396,200\0"				\
-		"bootargs=console=ttymxc0 init=/init " \
+		"bootargs=init=/init " \
 			"androidboot.console=ttymxc0 video=mxcdi1fb:RGB24,WSVGA " \
 			"ldb=di1 di1_primary gpu_nommu gpu_memory=64M\0" \
 		"bootcmd_SD=mmc read 1 ${loadaddr} 0x800 0x2000;" \
@@ -384,15 +384,15 @@
 	#define CONFIG_VIDEO_MX5
 	#define CONFIG_IPU_CLKRATE	200000000
 	#define CONFIG_SYS_CONSOLE_ENV_OVERWRITE
-	#define CONFIG_SYS_CONSOLE_OVERWRITE_ROUTINE
+//	#define CONFIG_SYS_CONSOLE_OVERWRITE_ROUTINE
 	#define CONFIG_SYS_CONSOLE_IS_IN_ENV
 	#define LCD_BPP		LCD_COLOR16
-	#define CONFIG_CMD_BMP
-	#define CONFIG_BMP_8BPP
-//	#define CONFIG_FB_BASE	(TEXT_BASE + 0x300000)
-	#define CONFIG_FB_BASE	0xCFB00000
-	#define CONFIG_SPLASH_SCREEN_ALIGN
-	//#define CONFIG_SYS_WHITE_ON_BLACK
+//	#define CONFIG_CMD_BMP
+//	#define CONFIG_BMP_8BPP
+	#define CONFIG_FB_BASE	(TEXT_BASE + 0x300000)
+//	#define CONFIG_FB_BASE	0xCFB00000
+//	#define CONFIG_SPLASH_SCREEN_ALIGN
+	#define CONFIG_SYS_WHITE_ON_BLACK
 
 	#define CONFIG_IMX_PWM
 	#define IMX_PWM1_BASE    PWM1_BASE_ADDR
