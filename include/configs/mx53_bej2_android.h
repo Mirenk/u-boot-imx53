@@ -173,9 +173,9 @@
 		"lvds_num=1\0"						\
 		"splashimage=0xcfd00000\0"			\
 		"splashpos=396,200\0"				\
-		"bootargs=console=ttymxc0 init=/init " \
+		"bootargs=init=/init " \
 			"androidboot.console=ttymxc0 video=mxcdi1fb:RGB24,WSVGA " \
-			"ldb=di1 di1_primary pmem=32M,64M fbmem=32M gpu_memory=64M\0" \
+			"ldb=di1 di1_primary pmem=32M,64M fbmem=8M gpu_memory=64M\0" \
 		"bootcmd_SD=mmc read 1 ${loadaddr} 0x1000 0x2000;" \
 			"mmc read 1 ${rd_loadaddr} 0x3000 0x300\0" \
 		"bootcmd=run bootcmd_SD; bootm ${loadaddr} ${rd_loadaddr}\0" \
@@ -195,9 +195,9 @@
 		"lvds_num=1\0"						\
 		"splashimage=0xcfd00000\0"			\
 		"splashpos=396,200\0"				\
-		"bootargs=console=ttymxc0 init=/init " \
+		"bootargs=init=/init " \
 			"androidboot.console=ttymxc0 video=mxcdi1fb:RGB24,WSVGA " \
-			"ldb=di1 di1_primary gpu_nommu gpu_memory=96M\0" \
+			"ldb=di1 di1_primary gpu_nommu gpu_memory=64M\0" \
 		"bootcmd_SD=mmc read 1 ${loadaddr} 0x800 0x2000;" \
 			"mmc read 1 ${rd_loadaddr} 0x3000 0x300\0" \
 		"bootcmd=run bootcmd_SD; bootm ${loadaddr} ${rd_loadaddr}\0" \
